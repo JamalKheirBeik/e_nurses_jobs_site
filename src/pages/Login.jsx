@@ -14,7 +14,7 @@ export default function Login() {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    const url = "http://localhost:3030/login";
+    const url = "https://e-nurses-jobs-api-v2.onrender.com/login";
     axios
       .post(url, { phone, password })
       .then((res) => {

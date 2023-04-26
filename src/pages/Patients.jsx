@@ -15,7 +15,7 @@ export default function Patients({ user }) {
   const [editState, setEditState] = useState(0); // used to trigger the useEffect below
 
   useEffect(() => {
-    const url = "http://localhost:3030/admin/search";
+    const url = "https://e-nurses-jobs-api-v2.onrender.com/admin/search";
     axios
       .post(url, { admin_id: user.ID, searchFor: "1", searchQuery: "" })
       .then((res) => {
@@ -30,7 +30,7 @@ export default function Patients({ user }) {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    const url = "http://localhost:3030/admin/add/patient";
+    const url = "https://e-nurses-jobs-api-v2.onrender.com/admin/add/patient";
     axios
       .post(url, { admin_id: user.ID, name, room, photo })
       .then((res) => {
@@ -59,7 +59,7 @@ export default function Patients({ user }) {
 
   const onEdit = (event) => {
     event.preventDefault();
-    const url = "http://localhost:3030/admin/edit/patient";
+    const url = "https://e-nurses-jobs-api-v2.onrender.com/admin/edit/patient";
     axios
       .post(url, {
         admin_id: user.ID,
@@ -99,7 +99,7 @@ export default function Patients({ user }) {
 
   const onSearch = (event) => {
     event.preventDefault();
-    const url = "http://localhost:3030/admin/search";
+    const url = "https://e-nurses-jobs-api-v2.onrender.com/admin/search";
     axios
       .post(url, { admin_id: user.ID, searchFor: "1", searchQuery: query })
       .then((res) => {

@@ -13,7 +13,7 @@ export default function CaringTypes({ user }) {
   const [editState, setEditState] = useState(0); // used to trigger the useEffect below
 
   useEffect(() => {
-    const url = "http://localhost:3030/admin/search";
+    const url = "https://e-nurses-jobs-api-v2.onrender.com/admin/search";
     axios
       .post(url, { admin_id: user.ID, searchFor: "3", searchQuery: "" })
       .then((res) => {
@@ -28,7 +28,8 @@ export default function CaringTypes({ user }) {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    const url = "http://localhost:3030/admin/add/caringType";
+    const url =
+      "https://e-nurses-jobs-api-v2.onrender.com/admin/add/caringType";
     axios
       .post(url, { admin_id: user.ID, name, description })
       .then((res) => {
@@ -56,7 +57,8 @@ export default function CaringTypes({ user }) {
 
   const onEdit = (event) => {
     event.preventDefault();
-    const url = "http://localhost:3030/admin/edit/caringType";
+    const url =
+      "https://e-nurses-jobs-api-v2.onrender.com/admin/edit/caringType";
     axios
       .post(url, {
         admin_id: user.ID,
@@ -94,7 +96,7 @@ export default function CaringTypes({ user }) {
 
   const onSearch = (event) => {
     event.preventDefault();
-    const url = "http://localhost:3030/admin/search";
+    const url = "https://e-nurses-jobs-api-v2.onrender.com/admin/search";
     axios
       .post(url, { admin_id: user.ID, searchFor: "3", searchQuery: query })
       .then((res) => {

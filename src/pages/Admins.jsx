@@ -10,7 +10,7 @@ export default function Admins({ user }) {
   const [query, setQuery] = useState("");
 
   useEffect(() => {
-    const url = "http://localhost:3030/admin/search";
+    const url = "https://e-nurses-jobs-api-v2.onrender.com/admin/search";
     axios
       .post(url, { admin_id: user.ID, searchFor: "4", searchQuery: "" })
       .then((res) => {
@@ -25,7 +25,7 @@ export default function Admins({ user }) {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    const url = "http://localhost:3030/admin/add/admin";
+    const url = "https://e-nurses-jobs-api-v2.onrender.com/admin/add/admin";
     axios
       .post(url, { admin_id: user.ID, username, password })
       .then((res) => {
@@ -42,7 +42,7 @@ export default function Admins({ user }) {
 
   const onSearch = (event) => {
     event.preventDefault();
-    const url = "http://localhost:3030/admin/search";
+    const url = "https://e-nurses-jobs-api-v2.onrender.com/admin/search";
     axios
       .post(url, { admin_id: user.ID, searchFor: "4", searchQuery: query })
       .then((res) => {

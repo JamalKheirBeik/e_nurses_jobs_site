@@ -19,7 +19,7 @@ export default function Carings({ user }) {
   const [editState, setEditState] = useState(0); // used to trigger the useEffect below
 
   useEffect(() => {
-    const url = "http://localhost:3030/admin/search";
+    const url = "https://e-nurses-jobs-api-v2.onrender.com/admin/search";
     // carings
     axios
       .post(url, { admin_id: user.ID, searchFor: "2", searchQuery: "" })
@@ -63,7 +63,7 @@ export default function Carings({ user }) {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    const url = "http://localhost:3030/admin/add/caring";
+    const url = "https://e-nurses-jobs-api-v2.onrender.com/admin/add/caring";
     axios
       .post(url, {
         admin_id: user.ID,
@@ -107,7 +107,7 @@ export default function Carings({ user }) {
 
   const onEdit = (event) => {
     event.preventDefault();
-    const url = "http://localhost:3030/admin/edit/caring";
+    const url = "https://e-nurses-jobs-api-v2.onrender.com/admin/edit/caring";
     axios
       .post(url, {
         admin_id: user.ID,
@@ -148,7 +148,7 @@ export default function Carings({ user }) {
 
   const onSearch = (event) => {
     event.preventDefault();
-    const url = "http://localhost:3030/admin/search";
+    const url = "https://e-nurses-jobs-api-v2.onrender.com/admin/search";
     axios
       .post(url, { admin_id: user.ID, searchFor: "2", searchQuery: query })
       .then((res) => {
